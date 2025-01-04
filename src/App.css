@@ -9,7 +9,6 @@ body {
   background: linear-gradient(0deg, #3a3287 10%, #88ed97 100%);
   min-height: 100vh;
   color: white;
-  font-family: 'Inter', system-ui, sans-serif;
 }
 
 /* Container for centering */
@@ -25,6 +24,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', system-ui, sans-serif;
   color: white;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -42,7 +42,7 @@ h2 {
   font-weight: 600;
 }
 
-/* nav style */
+/* nav style
 
 /* Style the navigation container */
 nav {
@@ -79,79 +79,165 @@ nav a.active {
 
 /* Optional: Responsive design for smaller screens */
 @media (max-width: 600px) {
-  body {
-    font-size: 14px; /* Adjust font size for mobile */
-  }
-
-  .container {
-    padding: 1rem;  /* Adjust padding for mobile */
-  }
-
-  h1 {
-    font-size: 1.8rem; /* Smaller title for mobile */
-  }
-
-  h2 {
-    font-size: 1.5rem; /* Smaller subtitle for mobile */
-  }
-
   nav {
     flex-direction: column;
-    padding: 10px;
   }
 
   nav a {
-    margin: 5px 0; /* Adjust link margin for mobile */
-    font-size: 16px; /* Adjust font size for mobile */
-  }
-
-  /* Form Elements */
-  input,
-  textarea,
-  select {
-    width: 100%; /* Make inputs full width on small screens */
-    padding: 0.75rem;
-  }
-
-  /* Adjust buttons */
-  button {
-    width: 100%; /* Make buttons full width on small screens */
-    padding: 12px 0;
-  }
-
-  /* Adjust control sections */
-  .control {
-    width: 100%; /* Make controls full width */
-    padding: 15px;
-  }
-  
-  .control .input-group {
-    flex-direction: column;
-  }
-
-  .control .button {
-    width: 100%; /* Buttons in control should take full width */
+    margin: 10px 0;
   }
 }
 
-/* Additional smaller screen tweaks if necessary */
-@media (max-width: 400px) {
-  h1 {
-    font-size: 1.5rem; /* Even smaller title on very small screens */
-  }
 
-  h2 {
-    font-size: 1.2rem; /* Smaller subtitle */
-  }
-
-  /* Adjust links and buttons for ultra-small screens */
-  nav a {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  button {
-    padding: 10px;
-    font-size: 14px;
-  }
+/* Form Elements */
+input,
+textarea,
+select {
+  width: 400px;
+  padding: 0.75rem;
+  border: 2px solid #9f7aea;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+  margin: 10px;
+  display: block;
+  background: rgba(255, 255, 255, 0.9);
 }
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #7a4bcb;
+  box-shadow: 0 0 0 3px rgba(183, 148, 244, 0.2);
+}
+
+button {
+  background-color: #500fc2; /* Light purple */
+  color: #ffffff; /* White text */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  border: solid #1c0a6d 2px;
+  padding: 10px 20px; /* Button padding */
+  margin: 10px;
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+button:hover {
+  background-color: #9c7bc1; /* Slightly darker purple on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+button:active {
+  background-color: #a181c2; /* Even darker purple on click */
+  transform: scale(0.95); /* Slight compression effect */
+}
+
+/* Centering the button */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  background-color: #f9f9f9; /* Light background */
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.control h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.control input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.control .input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.control .button {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.control .button:hover {
+  background-color: #0056b3;
+}
+
+.control .button:nth-child(2) {
+  background-color: #28a745;
+}
+
+.control .button:nth-child(2):hover {
+  background-color: #218838;
+}
+
+
+
+/* Links */
+a {
+  color: #b794f4;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: block;
+  text-align: center;
+}
+
+a:hover {
+  color: #9f7aea;
+  text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  margin: 0 auto;
+  max-width: 600px;
+  color: white;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Spacing Utilities */
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-8 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-8 { margin-bottom: 2rem; }
