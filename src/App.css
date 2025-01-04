@@ -6,11 +6,9 @@
 }
 
 body {
-  background: linear-gradient(0deg, #3a3287 10%, #8f3ebe 100%);
+  background: linear-gradient(0deg, #3a3287 10%, #88ed97 100%);
   min-height: 100vh;
   color: white;
-  font-family: 'Inter', system-ui, sans-serif; /* Use a consistent font for better readability */
-  margin: 0;
 }
 
 /* Container for centering */
@@ -23,8 +21,11 @@ body {
   padding: 1rem;
 }
 
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: white;
   line-height: 1.2;
   margin-bottom: 1rem;
   text-align: center;
@@ -41,7 +42,9 @@ h2 {
   font-weight: 600;
 }
 
-/* nav style */
+/* nav style
+
+/* Style the navigation container */
 nav {
   display: flex;
   justify-content: center;
@@ -78,44 +81,13 @@ nav a.active {
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
-    align-items: stretch; /* Stretch links to fill the width */
   }
 
   nav a {
     margin: 10px 0;
-    font-size: 16px; /* Make text smaller for mobile */
-    padding: 15px 20px;
-  }
-  
-  /* Make form elements more responsive */
-  input,
-  textarea,
-  select {
-    width: 100%;
-    padding: 0.75rem;
-  }
-
-  h1 {
-    font-size: 2rem; /* Smaller heading for mobile */
-  }
-
-  h2 {
-    font-size: 1.5rem; /* Smaller subheading for mobile */
-  }
-
-  /* Center buttons in the container */
-  .control {
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
-
-  .control .button {
-    width: 100%; /* Full width button on small screens */
-    padding: 12px;
-    font-size: 16px;
   }
 }
+
 
 /* Form Elements */
 input,
@@ -146,6 +118,7 @@ button {
   color: #ffffff; /* White text */
   border: none; /* No border */
   border-radius: 8px; /* Rounded corners */
+  border: solid #1c0a6d 2px;
   padding: 10px 20px; /* Button padding */
   margin: 10px;
   font-size: 16px; /* Font size */
@@ -228,6 +201,8 @@ body {
 .control .button:nth-child(2):hover {
   background-color: #218838;
 }
+
+
 
 /* Links */
 a {
