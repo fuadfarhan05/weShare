@@ -9,6 +9,9 @@ body {
   background: linear-gradient(0deg, #3a3287 10%, #88ed97 100%);
   min-height: 100vh;
   color: white;
+  font-size: 1rem; /* Default font size for scalability */
+  line-height: 1.5;
+  padding: 0;
 }
 
 /* Container for centering */
@@ -18,31 +21,30 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 2vw; /* Responsive padding based on viewport width */
 }
-
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', system-ui, sans-serif;
   color: white;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 2vw; /* Responsive margin */
   text-align: center;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 5vw; /* Responsive font size based on viewport width */
   font-weight: 700;
-  margin-top: 2rem;
+  margin-top: 2vw;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 4vw; /* Responsive font size based on viewport width */
   font-weight: 600;
 }
 
-/* nav style
+/* nav style */
 
 /* Style the navigation container */
 nav {
@@ -50,17 +52,17 @@ nav {
   justify-content: center;
   align-items: center;
   background-color: #3f138b;
-  border-radius: 20px;
-  padding: 10px 0;
+  border-radius: 1rem; /* Border-radius in rem for scalability */
+  padding: 2vw 0; /* Responsive padding */
 }
 
 /* Style for each link */
 nav a {
   color: white;
   text-decoration: none;
-  padding: 10px 20px;
-  margin: 0 15px;
-  font-size: 18px;
+  padding: 1vw 2vw; /* Responsive padding */
+  margin: 0 3vw; /* Responsive margin */
+  font-size: 4vw; /* Responsive font size */
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -84,23 +86,24 @@ nav a.active {
   }
 
   nav a {
-    margin: 10px 0;
+    margin: 1vw 0;
+    font-size: 5vw; /* Adjust font size for smaller screens */
+    padding: 2vw;
   }
 }
-
 
 /* Form Elements */
 input,
 textarea,
 select {
-  width: 400px;
-  padding: 0.75rem;
+  width: 80vw; /* Make form elements responsive based on the viewport width */
+  padding: 1.5vw;
   border: 2px solid #9f7aea;
   border-radius: 0.5rem;
-  font-size: 1rem;
+  font-size: 4vw;
   transition: border-color 0.2s, box-shadow 0.2s;
   font-family: inherit;
-  margin: 10px;
+  margin: 2vw 0; /* Responsive margin */
   display: block;
   background: rgba(255, 255, 255, 0.9);
 }
@@ -117,11 +120,10 @@ button {
   background-color: #500fc2; /* Light purple */
   color: #ffffff; /* White text */
   border: none; /* No border */
-  border-radius: 8px; /* Rounded corners */
-  border: solid #1c0a6d 2px;
-  padding: 10px 20px; /* Button padding */
-  margin: 10px;
-  font-size: 16px; /* Font size */
+  border-radius: 1rem;
+  padding: 2vw 4vw; /* Responsive padding */
+  margin: 2vw;
+  font-size: 4vw; /* Responsive font size */
   cursor: pointer; /* Pointer cursor on hover */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
@@ -150,24 +152,24 @@ body {
 .control {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 10px;
+  gap: 2vw; /* Responsive gap between control elements */
+  padding: 2vw;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 1rem;
   background-color: #f9f9f9;
-  margin-bottom: 15px;
+  margin-bottom: 2vw;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .control h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 5vw; /* Responsive font size */
   color: #333;
 }
 
 .control input {
-  padding: 8px;
-  font-size: 14px;
+  padding: 2vw;
+  font-size: 4vw;
   border: 1px solid #ccc;
   border-radius: 4px;
   flex: 1;
@@ -176,12 +178,12 @@ body {
 .control .input-group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 2vw;
 }
 
 .control .button {
-  padding: 8px 12px;
-  font-size: 14px;
+  padding: 2vw 4vw;
+  font-size: 4vw;
   color: white;
   background-color: #007bff;
   border: none;
@@ -202,8 +204,6 @@ body {
   background-color: #218838;
 }
 
-
-
 /* Links */
 a {
   color: #b794f4;
@@ -223,12 +223,12 @@ ul, ol {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 80vw; /* Responsive max-width */
   color: white;
 }
 
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1vw; /* Responsive margin */
 }
 
 /* Spacing Utilities */
