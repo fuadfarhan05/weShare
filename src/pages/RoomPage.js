@@ -94,7 +94,7 @@ function RoomPage() {
   return (
     <div>
       <h1>Welcome to {roomTitle || "the room"}</h1>
-      <h2>The room code is: {roomCode || "Loading..."}</h2>
+      <h2 class="codeColor">The room code is: {roomCode || "Loading..."}</h2>
 
       {/* Add Task Section */}
       <div>
@@ -108,11 +108,11 @@ function RoomPage() {
       </div>
 
       {/* Task List Section */}
-      <div>
+      <div class ="taskStyle">
         {taskList.length > 0 ? (
           taskList.map((task) => (
             <div key={task.id}>
-              <h2>{task.title}</h2>
+              <h2 class="tasktitle">{task.title}</h2>
               <button className="button" onClick={() => deleteTask(task.id)}>
                 Delete Task
               </button>

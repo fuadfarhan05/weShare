@@ -111,7 +111,7 @@ function Room() {
       <div>
         {roomList.length > 0 ? (
           roomList.map((room) => (
-            <div key={room.id}>
+            <div class="taskStyle" key={room.id}>
               <h1>{room.title}</h1>
               <button 
                 className="button" 

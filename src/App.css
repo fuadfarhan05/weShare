@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(0deg, #7ceb92 10%, #3a3287 100%);
+  background: linear-gradient(0deg, #6dce7c 10%, #3a3287 75%);
   min-height: 100vh;
   color: white;
   font-family: 'Inter', system-ui, sans-serif;
@@ -81,6 +81,31 @@ nav a.active {
   nav a {
     margin: 10px 0;
   }
+}
+
+/* Task style*/
+.taskStyle {
+  border: solid 5px;
+  border-color: #562d9d;
+  border-radius: 20px;
+  background-color:#7a4bcb;
+  margin:10px;
+  padding:10px;
+  display:flexbox;
+  text-align:center;
+}
+
+.tasktitle {
+  background-color:#7a4bcb;
+  color: #ffffff;
+  font-size: 45px;
+}
+
+.codeColor {
+  border: solid 5px;
+  border-color: #6dce7c;
+  border-radius: 20px;
+  color:#6dce7c;
 }
 
 /* Form Elements */
