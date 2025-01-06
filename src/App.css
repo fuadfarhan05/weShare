@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(0deg, #6dce7c 10%, #3a3287 75%);
+  background: linear-gradient(40deg, #170c53 30%, #6b4bc3 70%);
   min-height: 100vh;
   color: white;
   font-family: 'Inter', system-ui, sans-serif;
@@ -86,9 +86,10 @@ nav a.active {
 /* Task style*/
 .taskStyle {
   border: solid 5px;
-  border-color: #663ab0;
+  border-color: #382953;
   border-radius: 20px;
-  background-color:#ab70ee;
+  background:linear-gradient(100deg, #878686 10%, #503f60 75%);
+  background: linear-gradient(160deg,rgb(19, 68, 40) 10%, rgb(91, 131, 114) 75%);
   margin:10px;
   padding:10px;
   display:flexbox;
@@ -96,7 +97,7 @@ nav a.active {
 }
 
 .tasktitle {
-  color: #45fc70;
+  color: #fdfffe;
   font-size: 45px;
 }
 
@@ -106,11 +107,12 @@ nav a.active {
 
 /* copy */
 .middlecopy {
+  background: linear-gradient(40deg,#a599ea 50%, #c89cec 70%);
   text-align: center;
-  border: solid 5px;
+  border: solid 10px;
   border-color:#5c37a1;
   border-radius: 20px;
-  background-color: #ab70ee;
+  
 }
 
 /* Form Elements */
