@@ -110,7 +110,7 @@ function RoomPage() {
       <div class="middlecopy">
       <h1>Welcome to {roomTitle || "the room"}</h1>
       <h3 class="codeColor">The room code is: {roomCode || "Loading..."}</h3>
-      <button className="button" onClick={onCopiedCode}>Copy Code</button>
+      <button className="copybutton" onClick={onCopiedCode}>Copy Code</button>
       </div>
 
       {/* Add Task Section */}
@@ -130,7 +130,7 @@ function RoomPage() {
           taskList.map((task) => (
             <div key={task.id}>
               <h2 class="tasktitle">{task.title}</h2>
-              <button className="button" onClick={() => deleteTask(task.id)}>
+              <button className="deletebutton" onClick={() => deleteTask(task.id)}>
                 Delete Task
               </button>
             </div>

@@ -119,7 +119,7 @@ function Room() {
               >
                 Enter Room
               </button>
-              <button className="button" onClick={() => deleteRoom(room.id)}>Delete Room</button>
+              <button className="deletebutton" onClick={() => deleteRoom(room.id)}>Delete Room</button>
             </div>
           ))
         ) : (

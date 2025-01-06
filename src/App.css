@@ -162,6 +162,37 @@ button:active {
   transform: scale(0.95);
 }
 
+.deletebutton {
+  background-color: #d93131;
+  border-color:#8e0a0a;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+  border: solid 2px;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+}
+
+.copybutton {
+  background-color: #3b38f2;
+  border-color:#100de6;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+  border: solid 2px;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 /* Links */
 a {
   color: #b794f4;
