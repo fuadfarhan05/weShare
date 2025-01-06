@@ -75,7 +75,7 @@ function RoomPage() {
     try {
       if (roomCode) {
         await navigator.clipboard.writeText(roomCode);
-        alert("Room code copied to clipboard!");
+        alert("copied!");
       } else {
         alert("Room code is not available yet.");
       }
