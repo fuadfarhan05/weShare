@@ -71,6 +71,19 @@ function RoomPage() {
     }
   };
 
+  const onCopiedCode = async () => {
+    try {
+      if (roomCode) {
+        await navigator.clipboard.writeText(roomCode);
+        alert("Room code copied to clipboard!");
+      } else {
+        alert("Room code is not available yet.");
+      }
+    } catch (err) {
+      console.error("Failed to copy room code:", err);
+    }
+  };
+
   const deleteTask = async (id) => {
     try {
       const taskDoc = doc(db, "tasks", id);
@@ -80,7 +93,7 @@ function RoomPage() {
       console.error(err);
     }
   };
-
+  
   const updateTaskTitle = async (id) => {
     try {
       const taskDoc = doc(db, "tasks", id);
@@ -91,10 +104,14 @@ function RoomPage() {
     }
   };
 
+
   return (
     <div>
+      <div class="middlecopy">
       <h1>Welcome to {roomTitle || "the room"}</h1>
-      <h2 class="codeColor">The room code is: {roomCode || "Loading..."}</h2>
+      <h3 class="codeColor">The room code is: {roomCode || "Loading..."}</h3>
+      <button className="button" onClick={onCopiedCode}>Copy Code</button>
+      </div>
 
       {/* Add Task Section */}
       <div>

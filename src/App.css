@@ -86,9 +86,9 @@ nav a.active {
 /* Task style*/
 .taskStyle {
   border: solid 5px;
-  border-color: #562d9d;
+  border-color: #663ab0;
   border-radius: 20px;
-  background-color:#7a4bcb;
+  background-color:#ab70ee;
   margin:10px;
   padding:10px;
   display:flexbox;
@@ -96,16 +96,21 @@ nav a.active {
 }
 
 .tasktitle {
-  background-color:#7a4bcb;
-  color: #ffffff;
+  color: #45fc70;
   font-size: 45px;
 }
 
 .codeColor {
+  color:#150961;
+}
+
+/* copy */
+.middlecopy {
+  text-align: center;
   border: solid 5px;
-  border-color: #6dce7c;
+  border-color:#5c37a1;
   border-radius: 20px;
-  color:#6dce7c;
+  background-color: #ab70ee;
 }
 
 /* Form Elements */
@@ -134,9 +139,11 @@ select:focus {
 
 button {
   background-color: #500fc2;
-  color: #ffffff;
+  border-color:#2e227f;
+  color: rgb(136, 226, 114);
   border: none;
   border-radius: 8px;
+  border: solid 2px;
   padding: 10px 20px;
   margin: 10px;
   font-size: 16px;

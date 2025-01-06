@@ -30,7 +30,6 @@ function App(){
         <Route path="/chatroom" element={<Room />} />
         <Route path="/rooms/:roomId" element={<RoomPage />} />
 
-        
         {/* Optional 404 Page */}
         <Route path="*" element={<h1>404: Page Not Found</h1>} />
       </Routes>
