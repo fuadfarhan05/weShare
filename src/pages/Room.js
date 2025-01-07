@@ -45,13 +45,20 @@ function Room() {
     }
   };
 
-  const deleteRoom = async (id) => {
+  const deleteRoom = async (id, creatorUid) => {
     try {
-      const roomDoc = doc(db, "rooms", id);
-      await deleteDoc(roomDoc);
-      await getRoomList();
+      if (auth?.currentUser?.uid === creatorUid) {
+        // Proceed with room deletion
+        const roomDoc = doc(db, "rooms", id);
+        await deleteDoc(roomDoc);
+
+        console.log("Room deleted successfully.");
+        await getRoomList(); // Refresh the list of rooms
+      } else {
+        console.log("You are not authorized to delete this room.");
+      }
     } catch (err) {
-      console.error(err);
+      console.error("Error deleting room:", err);
     }
   };
 
@@ -119,7 +126,12 @@ function Room() {
               >
                 Enter Room
               </button>
-              <button className="deletebutton" onClick={() => deleteRoom(room.id)}>Delete Room</button>
+              <button 
+                className="deletebutton" 
+                onClick={() => deleteRoom(room.id, room.creatorUid)}
+              >
+                Delete Room
+              </button>
             </div>
           ))
         ) : (

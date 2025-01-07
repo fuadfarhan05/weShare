@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { db, auth } from '../config/firebase';
-import { getDocs, collection, addDoc, deleteDoc, updateDoc, doc, query, where } from "firebase/firestore";
+import { getDocs, collection, addDoc, deleteDoc, updateDoc, doc, query, where, serverTimestamp } from "firebase/firestore";
 import '../App.css';
 
 function RoomPage() {
@@ -41,6 +41,7 @@ function RoomPage() {
       const filteredData = data.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
+        timestamp: doc.data().timestamp?.toDate()?.toLocaleString() || "No timestamp", // Format timestamp
       }));
       setTaskList(filteredData);
     } catch (err) {
@@ -62,6 +63,7 @@ function RoomPage() {
         title: newTaskTitle,
         userId: auth?.currentUser?.uid,
         roomId: roomTitle, // Associate task with room
+        timestamp: serverTimestamp(), // Add server-generated timestamp
       });
 
       getTaskList();
@@ -93,24 +95,26 @@ function RoomPage() {
       console.error(err);
     }
   };
-  
+
   const updateTaskTitle = async (id) => {
     try {
       const taskDoc = doc(db, "tasks", id);
-      await updateDoc(taskDoc, { title: updatedTitle });
+      await updateDoc(taskDoc, {
+        title: updatedTitle,
+        timestamp: serverTimestamp(), // Update the timestamp
+      });
       getTaskList();
     } catch (err) {
       console.error(err);
     }
   };
 
-
   return (
     <div>
-      <div class="middlecopy">
-      <h1>Welcome to {roomTitle || "the room"}</h1>
-      <h3 class="codeColor">The room code is: {roomCode || "Loading..."}</h3>
-      <button className="copybutton" onClick={onCopiedCode}>Copy Code</button>
+      <div className="middlecopy">
+        <h1>Welcome to {roomTitle || "the room"}</h1>
+        <h3 className="codeColor">The room code is: {roomCode || "Loading..."}</h3>
+        <button className="copybutton" onClick={onCopiedCode}>Copy Code</button>
       </div>
 
       {/* Add Task Section */}
@@ -125,13 +129,24 @@ function RoomPage() {
       </div>
 
       {/* Task List Section */}
-      <div class ="taskStyle">
+      <div className="taskStyle">
         {taskList.length > 0 ? (
           taskList.map((task) => (
             <div key={task.id}>
-              <h2 class="tasktitle">{task.title}</h2>
+              <h2 className="tasktitle">{task.title}</h2>
+              <div className="timestampStyle">
+                <h3 className="time">{task.timestamp}</h3> {/* Display the formatted timestamp */}
+              </div>
               <button className="deletebutton" onClick={() => deleteTask(task.id)}>
                 Delete Task
+              </button>
+              <input
+                placeholder="Update task title..."
+                value={updatedTitle}
+                onChange={(e) => setUpdatedTitle(e.target.value)}
+              />
+              <button className="button" onClick={() => updateTaskTitle(task.id)}>
+                Update Title
               </button>
             </div>
           ))
